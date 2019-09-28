@@ -3,6 +3,7 @@
   <instructions>
     Multiple-choice Questions — Select One Answer Choice Sample Questions
   </instructions>
+  <time-in-seconds>120</time-in-seconds>
   <questions>
     <question id="1">
       <short>If 5x plus 32 equals 4 minus 2x what is the value of x ?</short>
@@ -12,7 +13,7 @@
         <f>-1</f>
       </score>
       <options>
-        <option id="A">-4</option>
+        <option id="A" is-correct="true">-4</option>
         <option id="B">-3</option>
         <option id="C">4</option>
         <option id="D">7</option>
@@ -29,7 +30,7 @@
       <options>
         <option id="A">-10</option>
         <option id="B">-5</option>
-        <option id="C">0</option>
+        <option id="C" is-correct="true">0</option>
         <option id="D">5</option>
         <option id="E">10</option>
       </options>
