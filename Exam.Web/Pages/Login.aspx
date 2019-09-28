@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/Exam.Master" CodeBehind="Login.aspx.cs" Inherits="Exam.Web.Pages.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/Anonymous.Master" CodeBehind="Login.aspx.cs" Inherits="Exam.Web.Pages.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="limiter">

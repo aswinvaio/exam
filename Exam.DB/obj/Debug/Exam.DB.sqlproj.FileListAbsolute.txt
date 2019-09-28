@@ -1,5 +1,0 @@
-C:\Git\Exam\Exam.DB\bin\Debug\Exam.DB.dacpac
-C:\Git\Exam\Exam.DB\bin\Debug\Exam.DB.dll
-C:\Git\Exam\Exam.DB\bin\Debug\Exam.DB.pdb
-C:\Git\Exam\Exam.DB\obj\Debug\Exam.DB.dll
-C:\Git\Exam\Exam.DB\obj\Debug\Exam.DB.pdb

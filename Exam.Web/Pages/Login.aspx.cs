@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exam.Lib.DBHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +17,15 @@ namespace Exam.Web.Pages
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
-
+            if (UserDBHelper.IsCredentialsValid(txtUserName.Text, txtPassword.Text))
+            {
+                Session["USER"] = txtUserName.Text;
+                if (UserDBHelper.IsUserAdmin(Session["USER"].ToString()))
+                {
+                    Response.Redirect("AdminHome.aspx");
+                }
+                Response.Redirect("Home.aspx");
+            }
         }
     }
 }

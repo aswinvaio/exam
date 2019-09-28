@@ -65,4 +65,7 @@
     <Build Include="dbo\Tables\ExamResult.sql" />
     <Build Include="dbo\Tables\Exam.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="InitScript.sql" />
+  </ItemGroup>
 </Project>

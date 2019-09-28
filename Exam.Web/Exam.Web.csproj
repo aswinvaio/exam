@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,8 +67,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="default.aspx" />
     <Content Include="packages.config" />
-    <Content Include="MasterPages\Exam.Master" />
+    <Content Include="MasterPages\Anonymous.Master" />
+    <Content Include="MasterPages\UserBase.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -76,6 +79,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\AdminHome.aspx" />
     <Content Include="Pages\Home.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="StyleSheets\main.css" />
@@ -86,12 +90,33 @@
     <Content Include="XMLFiles\SampleExam.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MasterPages\Exam.Master.cs">
-      <DependentUpon>Exam.Master</DependentUpon>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="MasterPages\Exam.Master.designer.cs">
-      <DependentUpon>Exam.Master</DependentUpon>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Anonymous.Master.cs">
+      <DependentUpon>Anonymous.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Anonymous.Master.designer.cs">
+      <DependentUpon>Anonymous.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\UserBase.Master.cs">
+      <DependentUpon>UserBase.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\UserBase.Master.designer.cs">
+      <DependentUpon>UserBase.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -118,6 +143,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Exam.Lib\Exam.Lib.csproj">
+      <Project>{50F0EE88-3533-4077-8826-0C459278E4CF}</Project>
+      <Name>Exam.Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
