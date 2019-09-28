@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<exam UniqueKey="E51A419D-A4EF-47E2-9693-6C4EE1F38D98">
+  <instructions>
+    Multiple-choice Questions — Select One Answer Choice Sample Questions
+  </instructions>
+  <questions>
+    <question id="1">
+      <short>If 5x plus 32 equals 4 minus 2x what is the value of x ?</short>
+      <description>hint</description>
+      <score>
+        <t>4</t>
+        <f>-1</f>
+      </score>
+      <options>
+        <option id="A">-4</option>
+        <option id="B">-3</option>
+        <option id="C">4</option>
+        <option id="D">7</option>
+        <option id="E">12</option>
+      </options>
+    </question>
+    <question id="2">
+      <short>Which of the following numbers is farthest from the number 1 on the number line?</short>
+      <description>hint</description>
+      <score>
+        <t>4</t>
+        <f>-1</f>
+      </score>
+      <options>
+        <option id="A">-10</option>
+        <option id="B">-5</option>
+        <option id="C">0</option>
+        <option id="D">5</option>
+        <option id="E">10</option>
+      </options>
+    </question>
+  </questions>
+</exam>

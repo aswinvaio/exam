@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Exam] (
+    [ExamID]  INT IDENTITY (1, 1) NOT NULL,
+    [ExamXML] XML NULL,
+    CONSTRAINT [PK_Exam] PRIMARY KEY CLUSTERED ([ExamID] ASC)
+);
+
