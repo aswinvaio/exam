@@ -11,11 +11,11 @@ namespace Exam.Lib.Objects
         public string QuestionId { get; set; }
         public List<string> SelectedOptionIds { get; set; }
 
-        public static Answer Populate(XmlNode answerNode)
-        {
-            Answer answer = new Answer();
+        //public static Answer Populate(XmlNode answerNode)
+        //{
+        //    Answer answer = new Answer();
 
-            return answer;
-        }
+        //    return answer;
+        //}
     }
 }
