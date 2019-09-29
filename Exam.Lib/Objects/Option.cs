@@ -16,13 +16,13 @@ namespace Exam.Lib.Objects
         {
             Option option = new Option();
 
-            option.Id = optionNode.Attributes["Id"].Value;
+            option.Id = optionNode.Attributes["id"].Value;
 
             XmlAttribute isCorrectAttrib = optionNode.Attributes["is-correct"];
             if (isCorrectAttrib != null)
                 option.IsCorrect = bool.Parse(isCorrectAttrib.Value);
 
-            option.Value = optionNode.Value;
+            option.Value = optionNode.InnerText;
 
             return option;
         }

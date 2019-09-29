@@ -17,14 +17,14 @@ namespace Exam.Lib.Objects
             Exam exam = new Exam();
 
             XmlNode examNode = doc.SelectSingleNode("exam");
-            exam.Instructions = examNode.SelectSingleNode("instructions")?.Value;
+            exam.Instructions = examNode.SelectSingleNode("instructions")?.InnerText;
 
-            string timeInSeconds = examNode.SelectSingleNode("time-in-seconds")?.Value;
+            string timeInSeconds = examNode.SelectSingleNode("time-in-seconds")?.InnerText;
             if (!String.IsNullOrEmpty(timeInSeconds))
                 exam.TimeInSeconds = Convert.ToInt32(timeInSeconds);
 
             exam.Questions = new List<Question>();
-            XmlNode questionsNode = examNode.SelectSingleNode("question");
+            XmlNode questionsNode = examNode.SelectSingleNode("questions");
             XmlNodeList questionNodes = questionsNode.SelectNodes("question");
             foreach (XmlNode questionNode in questionNodes)
             {

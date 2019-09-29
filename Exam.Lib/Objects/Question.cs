@@ -17,16 +17,16 @@ namespace Exam.Lib.Objects
         public static Question Populate(XmlNode questionNode)
         {
             Question question = new Question();
-            question.Id = questionNode.Attributes["Id"].Value;
-            question.Short = questionNode.SelectSingleNode("short")?.Value;
-            question.Description = questionNode.SelectSingleNode("description")?.Value;
+            question.Id = questionNode.Attributes["id"].Value;
+            question.Short = questionNode.SelectSingleNode("short")?.InnerText;
+            question.Description = questionNode.SelectSingleNode("description")?.InnerText;
             
             XmlNode scoreNode = questionNode.SelectSingleNode("score");
             question.Score = new Score();
-            string t = scoreNode.SelectSingleNode("t")?.Value;
+            string t = scoreNode.SelectSingleNode("t")?.InnerText;
             if (!string.IsNullOrEmpty(t))
                 question.Score.True = Convert.ToInt32(t);
-            string f = scoreNode.SelectSingleNode("f")?.Value;
+            string f = scoreNode.SelectSingleNode("f")?.InnerText;
             if (!string.IsNullOrEmpty(f))
                 question.Score.False = Convert.ToInt32(f);
 
