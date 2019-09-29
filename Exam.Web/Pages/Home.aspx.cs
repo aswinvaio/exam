@@ -27,7 +27,7 @@ namespace Exam.Web.Pages
                     string xml = ExamDBHelaper.GetExam(Convert.ToInt32(txtExamID.Text));
                     if (!string.IsNullOrEmpty(xml))
                     {
-                        Response.Redirect("PreviewExam.aspx?ExamId=" + txtExamID.Text);
+                        Response.Redirect("Question.aspx?ExamId=" + txtExamID.Text);
                     }
                 }
                 catch (Exception)

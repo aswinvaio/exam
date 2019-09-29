@@ -1,7 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Signup.aspx.cs" Inherits="Exam.Web.Pages.Signup" MasterPageFile="~/MasterPages/Anonymous.Master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Sign Up</h1><br />
+    <br />
+    <h1>Sign Up</h1>
+    <br />
     <div class="form-group row">
         <asp:Label runat="server" CssClass="col-sm-2 col-form-label" AssociatedControlID="txtFullName">Name</asp:Label>
         <div class="col-sm-10">
@@ -39,7 +41,8 @@
 
     <div class="form-group row">
         <div class="col-sm-10 offset-sm-2">
-            <asp:Button runat="server" CssClass="btn btn-primary" ID="btnSignup" OnClick="btnSignup_Click" Text="Sign Up" />
+            <asp:Button runat="server" CssClass="btn btn-primary" ID="btnSignup" OnClick="btnSignup_Click" Text="Sign Up" /> &nbsp;
+            <div class="btn btn-light"><a href="/">Login</a></div>
         </div>
     </div>
 

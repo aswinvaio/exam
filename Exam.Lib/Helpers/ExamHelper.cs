@@ -27,14 +27,15 @@ namespace Exam.Lib.Helpers
 
         public static Question NextQuestion(Exm exam, AnswerSheet answersheet)
         {
-            foreach(Question question in exam.Questions)
+            foreach (Question question in exam.Questions)
             {
                 bool unAnswered = true;
-                foreach(Answer answer in answersheet.Answers)
-                {
-                    if (answer.QuestionId == question.Id)
-                        unAnswered = false;
-                }
+                if (answersheet != null)
+                    foreach (Answer answer in answersheet.Answers)
+                    {
+                        if (answer.QuestionId == question.Id)
+                            unAnswered = false;
+                    }
                 if (unAnswered)
                     return question;
             }

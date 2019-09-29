@@ -23,12 +23,11 @@ namespace Exam.Web.UserCtrls
             }
         }
 
-        //TODO Need to get it from session
         public int UserId 
         {
             get
             {
-                return Convert.ToInt32(Request["UserId"]);
+                return Convert.ToInt32(Session["USERID"]);
             }
         }
 
@@ -38,7 +37,7 @@ namespace Exam.Web.UserCtrls
             Exm exam = ExamHelper.GetExam(this.ExamId);
 
             AnswerSheet answersheet = AnswerHelper.GetAnswerSheet(this.UserId, this.ExamId);
-            if (answersheet == null || answersheet.Answers.Count == 0)
+            if (!Page.IsPostBack)
             {
                 divQuestionContainer.Visible = false;
                 divMessage.Visible = false;
@@ -48,19 +47,7 @@ namespace Exam.Web.UserCtrls
                 litTime.Text = exam.TimeInSeconds != null ? exam.TimeInSeconds.ToString() : "-";
                 return;
             }
-            else if (answersheet.Answers.Count < exam.Questions.Count)
-            {
-                divQuestionContainer.Visible = true;
-                divMessage.Visible = false;
-                divWelcome.Visible = false;
-                Question question = ExamHelper.NextQuestion(exam, answersheet);
-                if (question != null)
-                {
-                    populateQuestionUI(question);
-
-                }
-            }
-            else if (answersheet.Answers.Count == exam.Questions.Count)
+            else if (answersheet != null && answersheet.Answers.Count == exam.Questions.Count)
             {
                 divQuestionContainer.Visible = false;
                 divMessage.Visible = true;
@@ -68,6 +55,10 @@ namespace Exam.Web.UserCtrls
 
                 lblMessage.Text = "Finished!";
             }
+            //else if (answersheet == null || answersheet.Answers.Count < exam.Questions.Count)
+            //{
+
+            //}
         }
 
         private void populateQuestionUI(Question question)
@@ -95,6 +86,39 @@ namespace Exam.Web.UserCtrls
 
                 litOptionId.Text = option.Id;
                 litOption.Text = option.Value;
+            }
+        }
+
+        protected void btnContinue_Click(object sender, EventArgs e)
+        {
+            Exm exam = ExamHelper.GetExam(this.ExamId);
+
+            AnswerSheet answersheet = AnswerHelper.GetAnswerSheet(this.UserId, this.ExamId);
+
+            divQuestionContainer.Visible = true;
+            divMessage.Visible = false;
+            divWelcome.Visible = false;
+            Question question = ExamHelper.NextQuestion(exam, answersheet);
+            if (question != null)
+            {
+                populateQuestionUI(question);
+            }
+        }
+
+        protected void btnNext_Click(object sender, EventArgs e)
+        {
+
+            Exm exam = ExamHelper.GetExam(this.ExamId);
+
+            AnswerSheet answersheet = AnswerHelper.GetAnswerSheet(this.UserId, this.ExamId);
+
+            divQuestionContainer.Visible = true;
+            divMessage.Visible = false;
+            divWelcome.Visible = false;
+            Question question = ExamHelper.NextQuestion(exam, answersheet);
+            if (question != null)
+            {
+                populateQuestionUI(question);
             }
         }
     }

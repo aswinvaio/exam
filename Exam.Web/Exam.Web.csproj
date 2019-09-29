@@ -84,6 +84,7 @@
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\PreviewExam.aspx" />
     <Content Include="Pages\Signup.aspx" />
+    <Content Include="Pages\Question.aspx" />
     <Content Include="StyleSheets\main.css" />
     <Content Include="StyleSheets\master.css" />
     <Content Include="StyleSheets\util.css" />
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="Pages\Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Question.aspx.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Question.aspx.designer.cs">
+      <DependentUpon>Question.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCtrls\PreviewExamCtrl.ascx.cs">

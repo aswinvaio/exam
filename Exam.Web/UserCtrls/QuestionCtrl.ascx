@@ -11,6 +11,9 @@
     <div class="time">
         Time: <asp:Literal ID="litTime" runat="server"></asp:Literal> Sec
     </div>
+    <div>
+        <asp:Button ID="btnContinue" runat="server" Text="Start" OnClick="btnContinue_Click" />
+    </div>
 </div>
 <div class="question-conatiner" id="divQuestionContainer" runat="server">
     <div class="question">
@@ -33,5 +36,8 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
+    </div>
+    <div>
+        <asp:Button ID="btnNext" runat="server" Text="Save& Continue" OnClick="btnNext_Click" />
     </div>
 </div>
