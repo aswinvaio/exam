@@ -1,1 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<answers>
+  <answer questionid="1">
+    <selected-option id="A"/>
+  </answer>
+  <answer questionid="2">
+    <selected-option id="B"/>
+  </answer>
+</answers>

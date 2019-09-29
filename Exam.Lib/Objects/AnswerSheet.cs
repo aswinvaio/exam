@@ -5,9 +5,11 @@ using System.Web;
 
 namespace Exam.Lib.Objects
 {
-    public class Answers
+    public class AnswerSheet
     {
-        //public List<Answer> Answers { get; set; }
+        public List<Answer> Answers { get; set; }
+
+
 
     }
 }

@@ -87,6 +87,7 @@
     <Content Include="StyleSheets\master.css" />
     <Content Include="StyleSheets\util.css" />
     <Content Include="UserCtrls\PreviewExamCtrl.ascx" />
+    <Content Include="UserCtrls\QuestionCtrl.ascx" />
     <Content Include="Web.config" />
     <Content Include="XMLFiles\SampleAnswer.xml" />
     <Content Include="XMLFiles\SampleExam.xml" />
@@ -148,6 +149,13 @@
     </Compile>
     <Compile Include="UserCtrls\PreviewExamCtrl.ascx.designer.cs">
       <DependentUpon>PreviewExamCtrl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtrls\QuestionCtrl.ascx.cs">
+      <DependentUpon>QuestionCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCtrls\QuestionCtrl.ascx.designer.cs">
+      <DependentUpon>QuestionCtrl.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
