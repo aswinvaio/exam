@@ -31,5 +31,29 @@ namespace Exam.Lib.DBHelper
             }
             return examXML;         
         }
+
+        public static int? PutExam(string text)
+        {
+            using (SqlConnection con = new SqlConnection(DBConnection.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("Proc_Exam_Instert", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    var param = cmd.Parameters.Add("@ExamXML", SqlDbType.NVarChar, -1); //MAX
+                    param.Direction = ParameterDirection.Input;
+                    param.Value = text;
+
+                    cmd.Parameters.Add("@ID", SqlDbType.Int);
+                    cmd.Parameters["@ID"].Direction = ParameterDirection.Output;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+                    int? examId = Convert.ToInt32(cmd.Parameters["@ID"].Value);
+                    return examId;
+                }
+            }
+        }
     }
 }

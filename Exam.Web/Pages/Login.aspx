@@ -14,7 +14,7 @@
                 <div class="container-login100-form-btn m-t-20">
                     <asp:Button ID="btnSignIn" CssClass="login100-form-btn" OnClick="btnSignIn_Click" runat="server" Text="Sign in" />
                 </div>
-                <div class="text-center p-t-45 p-b-4"></div>
+                <div class="text-center p-t-45 p-b-4"><asp:LinkButton runat="server" PostBackUrl="Signup.aspx" Text="Sign Up"></asp:LinkButton></div>
             </div>
         </div>
     </div>

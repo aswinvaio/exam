@@ -12,10 +12,32 @@ namespace Exam.Web.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!UserDBHelper.IsUserAdmin(Session["USER"].ToString()))
+            if (Session["USER"] != null && !UserDBHelper.IsUserAdmin(Session["USER"].ToString()))
             {
                 litTalk.Text = "Welcome " + Session["USER"];
             }
+        }
+
+        protected void btnExamID_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtExamID.Text))
+            {
+                try
+                {
+                    string xml = ExamDBHelaper.GetExam(Convert.ToInt32(txtExamID.Text));
+                    if (!string.IsNullOrEmpty(xml))
+                    {
+                        Response.Redirect("PreviewExam.aspx?ExamId=" + txtExamID.Text);
+                    }
+                }
+                catch (Exception)
+                {
+                    
+                }
+
+            }
+
+            litError.Text = "Please enter valid ExamID";
         }
     }
 }
