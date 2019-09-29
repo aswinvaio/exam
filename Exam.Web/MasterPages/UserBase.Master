@@ -12,7 +12,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"><asp:Button runat="server" ID="btnLogout" OnClick="btnLogout_Click" CssClass="btn btn-primary float-right" Text="Logout" /></nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/">Exam Master</a>
+            <div class="justify-content-end"><asp:Button runat="server" ID="btnLogout" OnClick="btnLogout_Click" CssClass="btn btn-primary" Text="Logout" /></div></nav>
         <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

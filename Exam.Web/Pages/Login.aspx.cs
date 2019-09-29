@@ -17,9 +17,11 @@ namespace Exam.Web.Pages
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
-            if (UserDBHelper.IsCredentialsValid(txtUserName.Text, txtPassword.Text))
+            int? userId = UserDBHelper.IsCredentialsValid(txtUserName.Text, txtPassword.Text);
+            if (userId != null)
             {
                 Session["USER"] = txtUserName.Text;
+                Session["USERID"] = userId;
                 if (UserDBHelper.IsUserAdmin(Session["USER"].ToString()))
                 {
                     Response.Redirect("AdminHome.aspx");

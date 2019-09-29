@@ -10,7 +10,7 @@ namespace Exam.Lib.DBHelper
 {
     public class UserDBHelper
     {
-        public static bool IsCredentialsValid(string username, string password)
+        public static int? IsCredentialsValid(string username, string password)
         {
             var conn = new SqlConnection(ConfigurationManager.AppSettings.Get("ConnectionString"));
             conn.Open();
@@ -19,7 +19,7 @@ namespace Exam.Lib.DBHelper
             SqlDataReader dataReader;
             string sql = string.Empty, output = string.Empty;
 
-            sql = "SELECT 1 FROM [User] WHERE UserName='" + username + "' AND [Password]='" + password + "'";
+            sql = "SELECT [UserID] FROM [User] WHERE UserName='" + username + "' AND [Password]='" + password + "'";
 
             command = new SqlCommand(sql, conn);
             dataReader = command.ExecuteReader();
@@ -28,12 +28,14 @@ namespace Exam.Lib.DBHelper
                 output = output + dataReader.GetValue(0);
             }
 
-            if (string.Compare(output, "1") == 0)
+            if (string.IsNullOrEmpty(output))
             {
-                return true;
+                return null;
             }
-
-            return false;
+            else
+            {
+                return Convert.ToInt32(output);
+            }
         }
 
         public static bool InsertUser(string fullname, string username, string password, string email, string mobile)
