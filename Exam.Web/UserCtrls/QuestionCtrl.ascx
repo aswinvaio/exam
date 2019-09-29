@@ -1,6 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="QuestionCtrl.ascx.cs" Inherits="Exam.Web.UserCtrls.QuestionCtrl" %>
-
-<div class="question-conatiner">
+<div id="divMessage" runat="server" visible="false">
+    <asp:Label ID="lblMessage" runat="server"></asp:Label> 
+</div>
+<div id="divWelcome" runat="server" visible="false">
+    <div class="instructions">
+        <b>Instructions:</b>
+        <br/><p>
+        <asp:Literal ID="litIstructions" runat="server"></asp:Literal></p>
+    </div>
+    <div class="time">
+        Time: <asp:Literal ID="litTime" runat="server"></asp:Literal> Sec
+    </div>
+</div>
+<div class="question-conatiner" id="divQuestionContainer" runat="server">
     <div class="question">
         <asp:Literal ID="litId" runat="server"></asp:Literal>.
                     <asp:Literal ID="litQuestion" runat="server"></asp:Literal>

@@ -81,6 +81,9 @@
   <ItemGroup>
     <Compile Include="DBHelper\DBConnection.cs" />
     <Compile Include="DBHelper\ExamDBHelaper.cs" />
+    <Compile Include="DBHelper\ExamResultDBHelper.cs" />
+    <Compile Include="Helpers\AnswerHelper.cs" />
+    <Compile Include="Helpers\ExamHelper.cs" />
     <Compile Include="Objects\Answer.cs" />
     <Compile Include="Objects\AnswerSheet.cs" />
     <Compile Include="Objects\Exam.cs" />

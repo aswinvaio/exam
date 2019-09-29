@@ -1,4 +1,5 @@
 ﻿using Exam.Lib.DBHelper;
+using Exam.Lib.Helpers;
 using Exam.Lib.Objects;
 using System;
 using System.Collections.Generic;
@@ -24,14 +25,9 @@ namespace Exam.Web.UserCtrls
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            string examXml = ExamDBHelaper.GetExam(this.ExamId);
-            if (!string.IsNullOrEmpty(examXml))
+            Exm exam = ExamHelper.GetExam(this.ExamId);
+            if (exam !=null)
             {
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(examXml);
-
-                Exm exam = Exm.Populate(doc);
-
                 litIstructions.Text = exam.Instructions != null ? exam.Instructions : "-";
                 litTime.Text = exam.TimeInSeconds != null ? exam.TimeInSeconds.ToString() : "-";
 
