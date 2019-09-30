@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Xml;
+using Exm = Exam.Lib.Objects.Exam;
 
 namespace Exam.Lib.DBHelper
 {
@@ -57,6 +58,28 @@ namespace Exam.Lib.DBHelper
                 }
             }
             return status;
+        }
+
+        public static List<Submission> GetSubmissions(int ExamId)
+        {
+            List<Submission> submissions = new List<Submission>();
+            using (SqlConnection con = new SqlConnection(DBConnection.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("Proc_ExamResults_GetSubmissions", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@ExamId", SqlDbType.Int).Value = ExamId;
+
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Submission submission = Submission.Populate(reader);
+                        submissions.Add(submission);
+                    }
+                }
+            }
+            return submissions;
         }
     }
 }

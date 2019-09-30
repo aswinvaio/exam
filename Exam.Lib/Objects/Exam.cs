@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Xml;
@@ -8,9 +9,11 @@ namespace Exam.Lib.Objects
 {
     public class Exam
     {
+        public int ID { get; set; }
         public string Instructions { get; set; }
         public List<Question> Questions { get; set; }
         public int? TimeInSeconds { get; set; }
+        public DateTime? CreatedDate { get; set; } 
 
         public static Exam Populate(XmlDocument doc)
         {
@@ -31,6 +34,15 @@ namespace Exam.Lib.Objects
                 exam.Questions.Add(Question.Populate(questionNode));
             }
 
+            return exam;
+        }
+
+        public static Exam Populate(SqlDataReader reader)
+        {
+            Exam exam = new Exam();
+            exam.ID = Convert.ToInt32(reader["ExamID"]);
+            exam.CreatedDate = Convert.ToDateTime(reader["CreatedDate"]);
+            //ExamXML
             return exam;
         }
     }

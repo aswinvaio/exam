@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Exam.Web.Pages {
+namespace Exam.Web.UserCtrls {
     
     
-    public partial class AdminHome {
+    public partial class ExamList {
         
         /// <summary>
-        /// litTalk control.
+        /// gvExamList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTalk;
+        protected global::System.Web.UI.WebControls.GridView gvExamList;
     }
 }

@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="QuestionCtrl.ascx.cs" Inherits="Exam.Web.UserCtrls.QuestionCtrl" %>
 <div id="divMessage" runat="server" visible="false">
-    <asp:Label ID="lblMessage" runat="server"></asp:Label> 
+    <asp:Label ID="lblMessage" runat="server"></asp:Label>
 </div>
 <div id="divWelcome" runat="server" visible="false">
     <div class="instructions">

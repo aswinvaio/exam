@@ -10,15 +10,15 @@
 namespace Exam.Web.Pages {
     
     
-    public partial class AdminHome {
+    public partial class Submissions {
         
         /// <summary>
-        /// litTalk control.
+        /// gvSubmissionList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTalk;
+        protected global::System.Web.UI.WebControls.GridView gvSubmissionList;
     }
 }

@@ -10,15 +10,15 @@
 namespace Exam.Web.Pages {
     
     
-    public partial class AdminHome {
+    public partial class ViewSubmission {
         
         /// <summary>
-        /// litTalk control.
+        /// aBack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTalk;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor aBack;
     }
 }

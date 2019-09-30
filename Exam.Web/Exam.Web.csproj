@@ -85,9 +85,13 @@
     <Content Include="Pages\PreviewExam.aspx" />
     <Content Include="Pages\Signup.aspx" />
     <Content Include="Pages\Question.aspx" />
+    <Content Include="Pages\Submissions.aspx" />
+    <Content Include="Pages\UploadExam.aspx" />
+    <Content Include="Pages\ViewSubmission.aspx" />
     <Content Include="StyleSheets\main.css" />
     <Content Include="StyleSheets\master.css" />
     <Content Include="StyleSheets\util.css" />
+    <Content Include="UserCtrls\ExamList.ascx" />
     <Content Include="UserCtrls\PreviewExamCtrl.ascx" />
     <Content Include="UserCtrls\QuestionCtrl.ascx" />
     <Content Include="Web.config" />
@@ -158,7 +162,36 @@
     <Compile Include="Pages\Question.aspx.designer.cs">
       <DependentUpon>Question.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Submissions.aspx.cs">
+      <DependentUpon>Submissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Submissions.aspx.designer.cs">
+      <DependentUpon>Submissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UploadExam.aspx.cs">
+      <DependentUpon>UploadExam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UploadExam.aspx.designer.cs">
+      <DependentUpon>UploadExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewSubmission.aspx.cs">
+      <DependentUpon>ViewSubmission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ViewSubmission.aspx.designer.cs">
+      <DependentUpon>ViewSubmission.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="URLDefs.cs" />
+    <Compile Include="UserCtrls\ExamList.ascx.cs">
+      <DependentUpon>ExamList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserCtrls\ExamList.ascx.designer.cs">
+      <DependentUpon>ExamList.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserCtrls\PreviewExamCtrl.ascx.cs">
       <DependentUpon>PreviewExamCtrl.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

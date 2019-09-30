@@ -19,29 +19,6 @@ namespace Exam.Web.Pages
             }
         }
 
-        protected void btnUpload_Click(object sender, EventArgs e)
-        {
-            if (fuExam.HasFile)
-            {
-                using (StreamReader reader = new StreamReader(fuExam.FileContent))
-                {
-                    string text = reader.ReadToEnd();
-                    int? examId = ExamDBHelaper.PutExam(text);
-                    if (examId == null)
-                    {
-                        lblMessage.Text = "Could not save Exam! Check XML";
-                    }
-                    else
-                    {
-                        lblMessage.Text = "Exam saved successfully, Exam ID: <strong>" + examId + "</strong>";
-                    }
-                }
-            }
-            else
-            {
-                lblMessage.Text = "File not selected!";
-            }
-            
-        }
+
     }
 }

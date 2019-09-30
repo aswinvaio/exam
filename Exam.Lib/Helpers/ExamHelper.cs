@@ -25,6 +25,11 @@ namespace Exam.Lib.Helpers
             return null;
         }
 
+        public static List<Exm> GetAllExams()
+        {
+            return ExamDBHelaper.GetAllExams();
+        }
+
         public static Question NextQuestion(Exm exam, AnswerSheet answersheet)
         {
             foreach (Question question in exam.Questions)

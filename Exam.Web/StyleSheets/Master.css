@@ -1,2 +1,7 @@
 ﻿body {
 }
+
+.correct {
+    color: #148e14;
+    font-weight: 600;
+}

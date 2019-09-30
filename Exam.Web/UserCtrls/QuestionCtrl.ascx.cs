@@ -140,13 +140,14 @@ namespace Exam.Web.UserCtrls
                         Answers = new List<Answer>()
                     };
                 }
+
+                answerSheet.Answers.Add(new Answer()
+                {
+                    QuestionId = litId.Text,
+                    SelectedOptionIds = checkedOptionIds
+                });
+                ExamHelper.SaveAnswerSheet(this.UserId, this.ExamId, answerSheet);
             }
-            answerSheet.Answers.Add(new Answer()
-            {
-                QuestionId = litId.Text,
-                SelectedOptionIds = checkedOptionIds
-            });
-            ExamHelper.SaveAnswerSheet(this.UserId, this.ExamId, answerSheet);
             _SetUIAndBindData();
         }
     }

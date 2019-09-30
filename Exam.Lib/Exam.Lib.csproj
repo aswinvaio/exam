@@ -82,6 +82,7 @@
     <Compile Include="DBHelper\DBConnection.cs" />
     <Compile Include="DBHelper\ExamDBHelaper.cs" />
     <Compile Include="DBHelper\ExamResultDBHelper.cs" />
+    <Compile Include="DBHelper\Submission.cs" />
     <Compile Include="Helpers\AnswerHelper.cs" />
     <Compile Include="Helpers\ExamHelper.cs" />
     <Compile Include="Objects\Answer.cs" />

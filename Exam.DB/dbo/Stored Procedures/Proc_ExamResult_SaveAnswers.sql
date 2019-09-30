@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[Proc_ExamResult_SaveAnswers] (
+﻿
+CREATE PROCEDURE [dbo].[Proc_ExamResult_SaveAnswers] (
 	@UserId INT
 	,@ExamId INT
 	,@AnswerXML XML
@@ -21,12 +22,14 @@ BEGIN
 			,[ExamID]
 			,[AnswerXML]
 			,[Score]
+			,[UpdatedOn]
 			)
 		VALUES (
 			@UserId
 			,@ExamId
 			,@AnswerXML
 			,@Score
+			,GETDATE()
 			)
 
 		SET @Status = 1 --insert
@@ -36,6 +39,7 @@ BEGIN
 		UPDATE [dbo].[ExamResult]
 		SET [AnswerXML] = @AnswerXML
 			,[Score] = @Score
+			,[UpdatedOn] = GETDATE()
 		WHERE UserID = @UserId
 			AND ExamID = @ExamId
 
