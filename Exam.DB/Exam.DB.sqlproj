@@ -68,6 +68,7 @@
     <Build Include="dbo\Stored Procedures\Proc_Exam_Instert.sql" />
     <Build Include="dbo\Stored Procedures\Proc_Exam_Get.sql" />
     <Build Include="dbo\Stored Procedures\Proc_ExamResult_GetAnswers.sql" />
+    <Build Include="dbo\Stored Procedures\Proc_ExamResult_SaveAnswers.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="InitScript.sql" />

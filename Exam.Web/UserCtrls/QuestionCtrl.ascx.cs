@@ -23,7 +23,7 @@ namespace Exam.Web.UserCtrls
             }
         }
 
-        public int UserId 
+        public int UserId
         {
             get
             {
@@ -31,9 +31,21 @@ namespace Exam.Web.UserCtrls
             }
         }
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                _SetUIAndBindData();
+            }
+        }
+
+        private void _SetUIAndBindData()
+        {
             Exm exam = ExamHelper.GetExam(this.ExamId);
 
             AnswerSheet answersheet = AnswerHelper.GetAnswerSheet(this.UserId, this.ExamId);
@@ -55,10 +67,17 @@ namespace Exam.Web.UserCtrls
 
                 lblMessage.Text = "Finished!";
             }
-            //else if (answersheet == null || answersheet.Answers.Count < exam.Questions.Count)
-            //{
-
-            //}
+            else if (answersheet == null || answersheet.Answers.Count < exam.Questions.Count)
+            {
+                divQuestionContainer.Visible = true;
+                divMessage.Visible = false;
+                divWelcome.Visible = false;
+                Question question = ExamHelper.NextQuestion(exam, answersheet);
+                if (question != null)
+                {
+                    populateQuestionUI(question);
+                }
+            }
         }
 
         private void populateQuestionUI(Question question)
@@ -91,35 +110,44 @@ namespace Exam.Web.UserCtrls
 
         protected void btnContinue_Click(object sender, EventArgs e)
         {
-            Exm exam = ExamHelper.GetExam(this.ExamId);
-
-            AnswerSheet answersheet = AnswerHelper.GetAnswerSheet(this.UserId, this.ExamId);
-
-            divQuestionContainer.Visible = true;
-            divMessage.Visible = false;
-            divWelcome.Visible = false;
-            Question question = ExamHelper.NextQuestion(exam, answersheet);
-            if (question != null)
-            {
-                populateQuestionUI(question);
-            }
+            _SetUIAndBindData();
         }
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-
-            Exm exam = ExamHelper.GetExam(this.ExamId);
-
-            AnswerSheet answersheet = AnswerHelper.GetAnswerSheet(this.UserId, this.ExamId);
-
-            divQuestionContainer.Visible = true;
-            divMessage.Visible = false;
-            divWelcome.Visible = false;
-            Question question = ExamHelper.NextQuestion(exam, answersheet);
-            if (question != null)
+            //validate
+            AnswerSheet answerSheet = AnswerHelper.GetAnswerSheet(this.UserId, this.ExamId);
+            List<string> checkedOptionIds = new List<string>();
+            foreach (RepeaterItem item in repOptions.Items)
             {
-                populateQuestionUI(question);
+                if (item.ItemType == ListItemType.Item || item.ItemType == ListItemType.AlternatingItem)
+                {
+                    var chkOption = item.FindControl("chkOption") as CheckBox;
+                    var litOptionId = item.FindControl("litOptionId") as Literal;
+
+                    if (chkOption.Checked)
+                    {
+                        checkedOptionIds.Add(litOptionId.Text);
+                    }
+                }
             }
+            if (checkedOptionIds.Count > 0)
+            {
+                if (answerSheet == null)
+                {
+                    answerSheet = new AnswerSheet()
+                    {
+                        Answers = new List<Answer>()
+                    };
+                }
+            }
+            answerSheet.Answers.Add(new Answer()
+            {
+                QuestionId = litId.Text,
+                SelectedOptionIds = checkedOptionIds
+            });
+            ExamHelper.SaveAnswerSheet(this.UserId, this.ExamId, answerSheet);
+            _SetUIAndBindData();
         }
     }
 }

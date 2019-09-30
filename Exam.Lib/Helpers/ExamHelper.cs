@@ -41,5 +41,51 @@ namespace Exam.Lib.Helpers
             }
             return null;
         }
+
+        public static int SaveAnswerSheet(int userId, int examId, AnswerSheet answerSheet)
+        {
+            //get Score
+            Exm exam = GetExam(examId);
+            int score = CalculateScore(exam, answerSheet);
+
+            return ExamResultDBHelper.SaveAnswers(userId, examId, answerSheet.ToString(), score);
+        }
+
+        public static int CalculateScore(Exm exam, AnswerSheet answersheet)
+        {
+            int score = 0;
+            foreach (Question question in exam.Questions)
+            {
+                foreach (Answer answer in answersheet.Answers)
+                {
+                    if (answer.QuestionId == question.Id)
+                    {
+                        bool isAnswerCorrect = true;
+                        foreach(Option opt in question.Options)
+                        {
+                            if (opt.IsCorrect)
+                            {
+                                if (!answer.SelectedOptionIds.Contains(opt.Id))
+                                    isAnswerCorrect = false;
+                            }
+                            else
+                            {
+                                if (answer.SelectedOptionIds.Contains(opt.Id))
+                                    isAnswerCorrect = false;
+                            }
+                        }
+                        if (isAnswerCorrect)
+                        {
+                            score += question.Score.True;
+                        }
+                        else
+                        {
+                            score += question.Score.False;
+                        }
+                    }
+                }
+            }
+            return score;
+        }
     }
 }

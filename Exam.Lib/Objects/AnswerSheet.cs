@@ -39,7 +39,7 @@ namespace Exam.Lib.Objects
         {
             XmlDocument answersheet = new XmlDocument();
 
-            XmlDeclaration xmlDeclaration = answersheet.CreateXmlDeclaration("1.0", "UTF-8", null);
+            XmlDeclaration xmlDeclaration = answersheet.CreateXmlDeclaration("1.0", "UTF-16", null);
             XmlElement root = answersheet.DocumentElement;
             answersheet.InsertBefore(xmlDeclaration, root);
 
@@ -52,11 +52,26 @@ namespace Exam.Lib.Objects
                 questionidAttrib.Value = answer.QuestionId;
                 XmlNode answerNode = answersheet.CreateElement("answer");
                 answerNode.Attributes.Append(questionidAttrib);
+
+                foreach(string optionid in answer.SelectedOptionIds)
+                {
+                    XmlAttribute idAttrib = answersheet.CreateAttribute("id");
+                    idAttrib.Value = optionid;
+                    XmlNode selectedOptionNode = answersheet.CreateElement("selected-option");
+                    selectedOptionNode.Attributes.Append(idAttrib);
+                    answerNode.AppendChild(selectedOptionNode);
+                }
                 rootNode.AppendChild(answerNode);
             }
+
+            answersheet.AppendChild(rootNode);
 
             return answersheet;
         }
 
+        public override string ToString()
+        {
+            return ToXML().OuterXml;
+        }
     }
 }

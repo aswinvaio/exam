@@ -32,5 +32,31 @@ namespace Exam.Lib.DBHelper
             }
             return examXML;
         }
+
+        public static int SaveAnswers(int userId, int examId, string answerSheetXML, int score)
+        {
+            int status = -1;
+            using (SqlConnection con = new SqlConnection(DBConnection.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("Proc_ExamResult_SaveAnswers", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@UserId", SqlDbType.Int).Value = userId;
+                    cmd.Parameters.Add("@ExamId", SqlDbType.Int).Value = examId;
+                    cmd.Parameters.Add("@AnswerXML", SqlDbType.Xml).Value = answerSheetXML;
+                    cmd.Parameters.Add("@Score", SqlDbType.Int).Value = score;
+
+                    cmd.Parameters.Add("@Status", SqlDbType.Int);
+                    cmd.Parameters["@Status"].Direction = ParameterDirection.Output;
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+                    status = Convert.ToInt32(cmd.Parameters["@Status"].Value);
+                }
+            }
+            return status;
+        }
     }
 }
