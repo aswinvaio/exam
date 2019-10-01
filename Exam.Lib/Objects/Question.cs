@@ -14,6 +14,9 @@ namespace Exam.Lib.Objects
         public Score Score { get; set; }
         public List<Option> Options { get; set; }
 
+        public Answer SubmittedAnswer { get; set; }
+        public int CalculatedScore { get; set; }
+
         public static Question Populate(XmlNode questionNode)
         {
             Question question = new Question();

@@ -23,10 +23,37 @@ namespace Exam.Web.UserCtrls
                 return Convert.ToInt32(Request["ExamId"]);
             }
         }
+
+        public bool IsAnswerMode
+        {
+            get
+            {
+                bool _answermode = false;
+                bool.TryParse(Request["Ans"], out _answermode);
+                return _answermode;
+            }
+        }
+
+        public int SubmittedUserId
+        {
+            get
+            {
+                return Convert.ToInt32(Request["SuId"]);
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Exm exam = ExamHelper.GetExam(this.ExamId);
-            if (exam !=null)
+
+            if (IsAnswerMode)
+            {
+                AnswerSheet answersheet = AnswerHelper.GetAnswerSheet(this.SubmittedUserId, this.ExamId);
+                //feed submitted answers
+                exam = ExamHelper.ProcessAnswers(exam, answersheet);
+            }
+
+            if (exam != null)
             {
                 litIstructions.Text = exam.Instructions != null ? exam.Instructions : "-";
                 litTime.Text = exam.TimeInSeconds != null ? exam.TimeInSeconds.ToString() : "-";
@@ -34,6 +61,7 @@ namespace Exam.Web.UserCtrls
                 repQuestions.DataSource = exam.Questions;
                 repQuestions.DataBind();
             }
+
         }
 
         protected void repQuestions_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -46,6 +74,7 @@ namespace Exam.Web.UserCtrls
                 var litDescription = e.Item.FindControl("litDescription") as Literal;
                 var litScore = e.Item.FindControl("litScore") as Literal;
                 var repOptions = e.Item.FindControl("repOptions") as Repeater;
+                var divSubmission = e.Item.FindControl("divSubmission") as HtmlGenericControl;
 
                 litId.Text = question.Id;
                 litQuestion.Text = question.Short;
@@ -55,6 +84,21 @@ namespace Exam.Web.UserCtrls
                 {
                     litScore.Text = string.Format("{0} ({1} if wrong)", question.Score.True, question.Score.False);
                 }
+                if (IsAnswerMode)
+                {
+                    divSubmission.Visible = true;
+                    var litAnswer = e.Item.FindControl("litAnswer") as Literal;
+                    var litScoreObtained = e.Item.FindControl("litScoreObtained") as Literal;
+
+                    litScoreObtained.Text = question.CalculatedScore.ToString();
+                    if (question.SubmittedAnswer != null && question.SubmittedAnswer.SelectedOptionIds != null)
+                        litAnswer.Text = string.Join(", ", question.SubmittedAnswer.SelectedOptionIds);
+                }
+                else
+                {
+                    divSubmission.Visible = false;
+                }
+
                 repOptions.DataSource = question.Options;
                 repOptions.DataBind();
             }

@@ -92,5 +92,35 @@ namespace Exam.Lib.Helpers
             }
             return score;
         }
+
+        public static Exm ProcessAnswers(Exm exam, AnswerSheet answersheet)
+        {
+            foreach (Question question in exam.Questions)
+            {
+                foreach (Answer answer in answersheet.Answers)
+                {
+                    if (answer.QuestionId == question.Id)
+                    {
+                        bool isAnswerCorrect = true;
+                        foreach (Option opt in question.Options)
+                        {
+                            if (opt.IsCorrect)
+                            {
+                                if (!answer.SelectedOptionIds.Contains(opt.Id))
+                                    isAnswerCorrect = false;
+                            }
+                            else
+                            {
+                                if (answer.SelectedOptionIds.Contains(opt.Id))
+                                    isAnswerCorrect = false;
+                            }
+                        }
+                        question.CalculatedScore = isAnswerCorrect ? question.Score.True : question.Score.False;
+                        question.SubmittedAnswer = answer;
+                    }
+                }
+            }
+            return exam;
+        }
     }
 }

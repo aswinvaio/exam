@@ -48,7 +48,7 @@ namespace Exam.Web.Pages
                 litFullName.Text = submission.FullName;
                 litScore.Text = submission.Score.ToString();
                 litUpdatedDate.Text = submission.UpdatedOn.ToString();
-                btnView.HRef = string.Format("{0}?ExamId={1}", URLDefs.ViewSubmission, this.ExamId);
+                btnView.HRef = string.Format("{0}?ExamId={1}&Ans=true&SuId={2}", URLDefs.ViewSubmission, this.ExamId, submission.UserID);
             }
         }
     }

@@ -31,8 +31,8 @@
                     <asp:Literal ID="litDescription" runat="server"></asp:Literal>
                 </div>
                 <div class="score">
-                    <i>Score: 
-                    <asp:Literal ID="litScore" runat="server"></asp:Literal></i>
+                    Score: 
+                    <asp:Literal ID="litScore" runat="server"></asp:Literal>
                 </div>
                 <div class="options">
                     <asp:Repeater ID="repOptions" runat="server" OnItemDataBound="repOptions_ItemDataBound">
@@ -44,6 +44,12 @@
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
+                </div>
+                <div id="divSubmission" runat="server" class="submitted-option-score">
+                    Submitted option:
+                    <asp:Literal ID="litAnswer" runat="server"></asp:Literal><br />
+                    Score obtained:
+                    <asp:Literal ID="litScoreObtained" runat="server"></asp:Literal>
                 </div>
             </div>
         </ItemTemplate>

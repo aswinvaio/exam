@@ -5,3 +5,25 @@
     color: #148e14;
     font-weight: 600;
 }
+.submitted-option-score{
+    text-align:right;
+}
+.question-conatiner{
+    border:solid 1px;
+    padding: 8px;
+}
+
+.options{
+    padding-left:20px;
+    padding-top:4px;
+}
+.score{
+    font-size:smaller;
+    padding-left:8px;
+}
+.container{
+    padding-bottom:20px;
+}
+.question-description{
+    padding-left:8px;
+}
