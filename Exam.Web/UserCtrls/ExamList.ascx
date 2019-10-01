@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ExamList.ascx.cs" Inherits="Exam.Web.UserCtrls.ExamList" %>
 <div class="exam-list">
-    <asp:GridView ID="gvExamList" runat="server" OnRowDataBound="gvExamList_RowDataBound" Width="100%" AutoGenerateColumns="false" CssClass="gridview" EmptyDataText="No Exams to list">
+    <asp:GridView ID="gvExamList" runat="server" OnRowDataBound="gvExamList_RowDataBound" Width="100%" AutoGenerateColumns="false" CssClass="table table-bordered table-hover" EmptyDataText="No Exams to list">
         <Columns>
             <asp:TemplateField HeaderText="ExamID">
                 <ItemTemplate>

@@ -51,6 +51,7 @@ namespace Exam.Web.UserCtrls
                 AnswerSheet answersheet = AnswerHelper.GetAnswerSheet(this.SubmittedUserId, this.ExamId);
                 //feed submitted answers
                 exam = ExamHelper.ProcessAnswers(exam, answersheet);
+                divExamDetails.Visible = false;
             }
 
             if (exam != null)

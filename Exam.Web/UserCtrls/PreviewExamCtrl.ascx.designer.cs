@@ -13,6 +13,15 @@ namespace Exam.Web.UserCtrls {
     public partial class PreviewExamCtrl {
         
         /// <summary>
+        /// divExamDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divExamDetails;
+        
+        /// <summary>
         /// litIstructions control.
         /// </summary>
         /// <remarks>

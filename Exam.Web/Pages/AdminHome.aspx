@@ -3,7 +3,7 @@
 <%@ Register Src="~/UserCtrls/ExamList.ascx" TagPrefix="uc" TagName="ExamList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Admin's Home</h1>
+    <h2>Admin's Home</h2>
     <asp:Literal runat="server" ID="litTalk"></asp:Literal>
     <div>
         <a href="UploadExam.aspx" >Upload new Exam XML</a>
@@ -11,7 +11,7 @@
     <br />
     <br />
     <div>
-        <h2>Available Exams:</h2>
+        <h4>Available Exams:</h4>
         <br />
         <div class="exam-list">
             <uc:ExamList runat="server" />

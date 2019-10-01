@@ -65,7 +65,7 @@ namespace Exam.Web.UserCtrls
                 divMessage.Visible = true;
                 divWelcome.Visible = false;
 
-                lblMessage.Text = "Finished!";
+                //lblMessage.Text = "Finished!";
             }
             else if (answersheet == null || answersheet.Answers.Count < exam.Questions.Count)
             {

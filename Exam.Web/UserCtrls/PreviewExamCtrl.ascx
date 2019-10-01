@@ -1,21 +1,23 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PreviewExamCtrl.ascx.cs" Inherits="Exam.Web.UserCtrls.PreviewExamCtrl" %>
 
 <div class="exam-container">
-    <div class="instructions">
-        <h3>Instructions:</h3>
-        <br />
-        <p>
-            <asp:Literal ID="litIstructions" runat="server"></asp:Literal>
-        </p>
-    </div>
-    <div class="time">
-        <b>Time:
+    <div id="divExamDetails" runat="server">
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <br />
+            <p>
+                <asp:Literal ID="litIstructions" runat="server"></asp:Literal>
+            </p>
+        </div>
+        <div class="time">
+            <b>Time:
             <asp:Literal ID="litTime" runat="server"></asp:Literal>
-            Sec</b>
-    </div>
-    <br />
-    <div>
-        <h3>Questions:</h3>
+                Sec</b>
+        </div>
+        <br />
+        <div>
+            <h3>Questions:</h3>
+        </div>
     </div>
     <asp:Repeater ID="repQuestions" runat="server" OnItemDataBound="repQuestions_ItemDataBound">
         <ItemTemplate>

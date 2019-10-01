@@ -1,14 +1,16 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/UserBase.Master" CodeBehind="Submissions.aspx.cs" Inherits="Exam.Web.Pages.Submissions" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3>Submissions</h3>
-    <br />
     <a href="AdminHome.aspx">Back to home</a>
     <br />
     <br />
+    <h3>Submissions</h3>
+    <br />
+
+    <br />
     <div>
         <div class="submission-list">
-            <asp:GridView ID="gvSubmissionList" runat="server" OnRowDataBound="gvSubmissionList_RowDataBound" Width="100%" AutoGenerateColumns="false" CssClass="gridview" EmptyDataText="No Submissions">
+            <asp:GridView ID="gvSubmissionList" runat="server" OnRowDataBound="gvSubmissionList_RowDataBound" Width="100%" AutoGenerateColumns="false" CssClass="table table-bordered table-hover" EmptyDataText="No Submissions">
                 <Columns>
                     <asp:TemplateField HeaderText="ID">
                         <ItemTemplate>

@@ -6,6 +6,19 @@
     <div>
         <a id="aBack" runat="server">Back to submissions</a>
         <br />
+        <br />
+    </div>
+    <div class="submitted-user">
+        UserID:
+        <asp:Literal ID="litUserID" runat="server" /><br />
+        Username:
+        <asp:Literal ID="litUsername" runat="server" /><br />
+        FullName:
+        <asp:Literal ID="litFullName" runat="server" /><br />
+        Score:
+        <asp:Literal ID="litScore" runat="server" /><br />
+        Updated on:
+        <asp:Literal ID="litUpdatedDate" runat="server" /><br />
     </div>
     <div>
         <br />

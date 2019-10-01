@@ -13,10 +13,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="/">Exam Master</a>
-            <div class="justify-content-end">
-                <asp:Button runat="server" ID="btnLogout" OnClick="btnLogout_Click" CssClass="btn btn-primary" Text="Logout" /></div>
+            <div class="pull-right">
+                <asp:Button runat="server" ID="btnLogout" OnClick="btnLogout_Click" CssClass="btn btn-light pull-right" Text="Logout" tabIndex="-1" />
+            </div>
         </nav>
         <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

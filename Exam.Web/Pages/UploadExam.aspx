@@ -7,10 +7,15 @@
     <br />
     <br />
     <div>
-        <asp:FileUpload runat="server" ID="fuExam" />
+        <div class="w-50">
+            <asp:FileUpload runat="server" ID="fuExam" CssClass="custom-file-asw" />
+        </div>
+        <br />
         <asp:Button runat="server" ID="btnUpload" Text="Upload"
-            OnClick="btnUpload_Click" />
-        <asp:Label runat="server" ID="lblMessage" Text=""></asp:Label>
+            OnClick="btnUpload_Click" CssClass="btn btn-primary" />
+        <br />
+        <br />
+        <asp:Label runat="server" ID="lblMessage" Text="" CssClass="alert-warning"></asp:Label>
     </div>
 
 </asp:Content>

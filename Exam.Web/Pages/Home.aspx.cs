@@ -12,6 +12,7 @@ namespace Exam.Web.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.Form.DefaultButton = this.btnExamID.UniqueID;
             if (Session["USER"] != null && !UserDBHelper.IsUserAdmin(Session["USER"].ToString()))
             {
                 litTalk.Text = "Welcome " + Session["USER"];
