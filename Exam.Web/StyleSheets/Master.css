@@ -14,6 +14,7 @@
     border: solid 1px;
     padding: 8px;
     overflow: hidden;
+    border-radius:6px;
 }
 
 .options {
@@ -65,4 +66,7 @@
 .custom-file-asw {
     border-style: solid;
     border-color: #838e9c14;
+}
+.form-signup{
+    max-width:60%;
 }
