@@ -71,6 +71,7 @@
     <Content Include="packages.config" />
     <Content Include="MasterPages\Anonymous.Master" />
     <Content Include="MasterPages\UserBase.Master" />
+    <Content Include="MasterPages\AdminBase.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,6 +106,13 @@
     </Compile>
     <Compile Include="default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\AdminBase.Master.cs">
+      <DependentUpon>AdminBase.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\AdminBase.Master.designer.cs">
+      <DependentUpon>AdminBase.Master</DependentUpon>
     </Compile>
     <Compile Include="MasterPages\Anonymous.Master.cs">
       <DependentUpon>Anonymous.Master</DependentUpon>

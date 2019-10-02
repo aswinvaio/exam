@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/UserBase.Master" CodeBehind="AdminHome.aspx.cs" Inherits="Exam.Web.Pages.AdminHome" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/AdminBase.Master" CodeBehind="AdminHome.aspx.cs" Inherits="Exam.Web.Pages.AdminHome" %>
 
 <%@ Register Src="~/UserCtrls/ExamList.ascx" TagPrefix="uc" TagName="ExamList" %>
 

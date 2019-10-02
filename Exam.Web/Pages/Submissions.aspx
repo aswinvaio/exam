@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/UserBase.Master" CodeBehind="Submissions.aspx.cs" Inherits="Exam.Web.Pages.Submissions" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/AdminBase.Master" CodeBehind="Submissions.aspx.cs" Inherits="Exam.Web.Pages.Submissions" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <a href="AdminHome.aspx">Back to home</a>

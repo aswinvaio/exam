@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/UserBase.Master" CodeBehind="ViewSubmission.aspx.cs" Inherits="Exam.Web.Pages.ViewSubmission" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/AdminBase.Master" CodeBehind="ViewSubmission.aspx.cs" Inherits="Exam.Web.Pages.ViewSubmission" %>
 
 <%@ Register Src="~/UserCtrls/PreviewExamCtrl.ascx" TagPrefix="uc" TagName="PreviewExamCtrl" %>
 

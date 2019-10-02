@@ -24,6 +24,7 @@ namespace Exam.Web.Pages
                 Session["USERID"] = userId;
                 if (UserDBHelper.IsUserAdmin(Session["USER"].ToString()))
                 {
+                    Session["ISADMIN"] = "1";
                     Response.Redirect("AdminHome.aspx");
                 }
                 Response.Redirect("Home.aspx");

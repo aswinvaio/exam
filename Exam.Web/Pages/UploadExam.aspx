@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/UserBase.Master" CodeBehind="UploadExam.aspx.cs" Inherits="Exam.Web.Pages.UploadExam" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/MasterPages/AdminBase.Master" CodeBehind="UploadExam.aspx.cs" Inherits="Exam.Web.Pages.UploadExam" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Upload Exam XML</h2>

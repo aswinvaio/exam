@@ -1,5 +1,4 @@
-﻿using Exam.Lib.DBHelper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Exam.Web.MasterPages
 {
-    public partial class UserBase : System.Web.UI.MasterPage
+    public partial class AdminBase : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,6 +18,7 @@ namespace Exam.Web.MasterPages
         {
             Session["USER"] = null;
             Session["ISADMIN"] = null;
+            
             CheckIfUserAvailable();
         }
 
@@ -26,9 +26,9 @@ namespace Exam.Web.MasterPages
         {
             if (Session["USER"] == null 
                 || string.IsNullOrWhiteSpace(Session["USER"].ToString()) 
-                || Session["ISADMIN"] != null)
+                || Session["ISADMIN"] == null 
+                || Session["ISADMIN"].ToString() != "1")
             {
-                Session["ISADMIN"] = null;
                 Response.Redirect("/Pages/Login.aspx");
             }
         }
