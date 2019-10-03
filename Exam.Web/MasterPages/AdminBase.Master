@@ -8,7 +8,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../StyleSheets/bootstrap.min.css">
     <link rel="stylesheet" href="../StyleSheets/master.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="/Pages/AdminHome.aspx">Exam Master</a>
             <div class="pull-right">
-                <asp:Button runat="server" ID="btnLogout" OnClick="btnLogout_Click" CssClass="btn btn-light pull-right" Text="Logout" tabIndex="-1" />
+                <asp:Button runat="server" ID="btnLogout" OnClick="btnLogout_Click" CssClass="btn btn-light pull-right" Text="Logout" TabIndex="-1" />
             </div>
         </nav>
         <div class="container">
@@ -24,5 +24,7 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script src="../Scripts/jquery-3.3.1.slim.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
 </body>
 </html>

@@ -89,6 +89,9 @@
     <Content Include="Pages\Submissions.aspx" />
     <Content Include="Pages\UploadExam.aspx" />
     <Content Include="Pages\ViewSubmission.aspx" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="StyleSheets\bootstrap.min.css" />
     <Content Include="StyleSheets\main.css" />
     <Content Include="StyleSheets\master.css" />
     <Content Include="StyleSheets\util.css" />
@@ -215,9 +218,7 @@
       <DependentUpon>QuestionCtrl.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Exam.Lib\Exam.Lib.csproj">
       <Project>{50F0EE88-3533-4077-8826-0C459278E4CF}</Project>
