@@ -32,7 +32,7 @@ BEGIN
 		)
 	VALUES (
 		'sampleuser'
-		,'Sample User Jack'
+		,'Sample User Aswin'
 		,'!QAZ2wsx'
 		)
 END

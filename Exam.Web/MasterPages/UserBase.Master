@@ -14,7 +14,7 @@
 <body>
     <form id="form1" runat="server">
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="/">Exam Master</a>
+            <a class="navbar-brand" href="/Pages/Home.aspx">Exam Master</a>
             <div class="pull-right">
                 <asp:Button runat="server" ID="btnLogout" OnClick="btnLogout_Click" CssClass="btn btn-light pull-right" Text="Logout" tabIndex="-1" />
             </div>
