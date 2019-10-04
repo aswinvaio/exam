@@ -13,7 +13,7 @@ namespace Exam.Web.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (UserDBHelper.IsUserAdmin(Session["USER"].ToString()))
+            if (Session["USER"] != null && UserDBHelper.IsUserAdmin(Session["USER"].ToString()))
             {
                 litTalk.Text = "Welcome " + Session["USER"];
             }
