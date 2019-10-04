@@ -141,12 +141,15 @@ namespace Exam.Web.UserCtrls
                     };
                 }
 
-                answerSheet.Answers.Add(new Answer()
+                if (!answerSheet.Answers.Any(x => x.QuestionId == litId.Text))
                 {
-                    QuestionId = litId.Text,
-                    SelectedOptionIds = checkedOptionIds
-                });
-                ExamHelper.SaveAnswerSheet(this.UserId, this.ExamId, answerSheet);
+                    answerSheet.Answers.Add(new Answer()
+                    {
+                        QuestionId = litId.Text,
+                        SelectedOptionIds = checkedOptionIds
+                    });
+                    ExamHelper.SaveAnswerSheet(this.UserId, this.ExamId, answerSheet);
+                }
             }
             _SetUIAndBindData();
         }
