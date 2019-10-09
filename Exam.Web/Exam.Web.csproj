@@ -217,6 +217,7 @@
     <Compile Include="UserCtrls\QuestionCtrl.ascx.designer.cs">
       <DependentUpon>QuestionCtrl.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

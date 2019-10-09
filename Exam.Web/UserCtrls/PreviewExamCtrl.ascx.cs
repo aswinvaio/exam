@@ -57,7 +57,7 @@ namespace Exam.Web.UserCtrls
             if (exam != null)
             {
                 litIstructions.Text = exam.Instructions != null ? exam.Instructions : "-";
-                litTime.Text = exam.TimeInSeconds != null ? exam.TimeInSeconds.ToString() : "-";
+                litTime.Text = exam.TimeInSeconds.HasValue ? Utils.TimeString(exam.TimeInSeconds.Value) : "-";
 
                 repQuestions.DataSource = exam.Questions;
                 repQuestions.DataBind();

@@ -16,8 +16,7 @@
     </div>
     <div class="time">
         <b>Time:
-        <asp:Literal ID="litTime" runat="server"></asp:Literal>
-            Sec</b>
+        <asp:Literal ID="litTime" runat="server"></asp:Literal></b>
     </div>
     <br />
     <br />
@@ -51,7 +50,7 @@
     </div>
     <br />
     <br />
-    <div class="float-right" >
+    <div class="float-right">
         <asp:Button ID="btnNext" runat="server" Text="Save & Continue" OnClick="btnNext_Click" CssClass="btn btn-primary" />
     </div>
 </div>

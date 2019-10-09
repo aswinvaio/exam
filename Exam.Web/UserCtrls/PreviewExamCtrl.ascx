@@ -11,8 +11,7 @@
         </div>
         <div class="time">
             <b>Time:
-            <asp:Literal ID="litTime" runat="server"></asp:Literal>
-                Sec</b>
+            <asp:Literal ID="litTime" runat="server"></asp:Literal></b>
         </div>
         <br />
         <div>

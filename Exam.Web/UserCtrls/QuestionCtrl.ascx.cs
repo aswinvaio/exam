@@ -56,7 +56,7 @@ namespace Exam.Web.UserCtrls
                 divWelcome.Visible = true;
 
                 litIstructions.Text = exam.Instructions != null ? exam.Instructions : "-";
-                litTime.Text = exam.TimeInSeconds != null ? exam.TimeInSeconds.ToString() : "-";
+                litTime.Text = exam.TimeInSeconds.HasValue ? Utils.TimeString(exam.TimeInSeconds.Value) : "-";
                 return;
             }
             else if (answersheet != null && answersheet.Answers.Count == exam.Questions.Count)
